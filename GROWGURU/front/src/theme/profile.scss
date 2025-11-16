@@ -1,0 +1,114 @@
+.profile-page {
+  @apply bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 h-screen overflow-hidden;
+
+  // Adicionando a imagem de fundo
+  ion-content::part(background) {
+    background-image: url('../assets/imagem/BC1.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.3; // Opacidade reduzida para não interferir na legibilidade
+  }
+
+  .profile-container {
+    @apply h-full flex flex-col items-center justify-center px-4 py-4;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+  }
+
+  .profile-box {
+    @apply w-full max-w-sm mx-auto text-center space-y-4;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem 0;
+    box-sizing: border-box;
+    margin-top: -1.5rem; /* Ajustado para centralizar melhor */
+    transform: translateY(5%); /* Adicionado para ajuste fino do posicionamento */
+  }
+
+  .logo-wrapper {
+    @apply flex justify-center items-center mb-4 -mt-8; /* Ajustado o espaçamento */
+
+    img {
+      @apply h-36 w-auto;
+    }
+  }
+
+  .title-section {
+    @apply text-center mb-4; /* Reduzido o espaçamento inferior */
+
+    .profile-title {
+      @apply text-2xl sm:text-3xl font-bold text-white mb-2;
+    }
+
+    .profile-subtitle {
+      @apply text-sm text-gray-400;
+    }
+  }
+
+  .profile-form {
+    @apply flex-1 flex flex-col justify-start;
+    min-height: 0;
+    gap: 0.7rem;
+
+    .form-group {
+      @apply space-y-0.5;
+      margin-bottom: 1.0rem;
+
+      label {
+        @apply block text-sm font-semibold;
+        color: #ffffff; // Stronger white for labels
+      }
+
+      .input-wrapper {
+        @apply relative flex items-center;
+
+        ion-input {
+          @apply w-full px-4 py-3 bg-gray-800/50 rounded-lg border border-gray-700 focus:ring-2 focus:ring-orange-400 focus:border-orange-400 text-gray-100;
+          --padding-start: 1.25rem;
+          --padding-end: 1.25rem;
+          --padding-top: 0.875rem;
+          --padding-bottom: 0.875rem;
+        }
+
+        .toggle-password {
+          @apply absolute right-3 cursor-pointer z-10 text-gray-400 hover:text-orange-400 top-1/2 -translate-y-1/2 flex items-center;
+        }
+      }
+
+      .error-message {
+        @apply mt-1 text-sm text-red-500;
+      }
+    }
+
+    .submit-button {
+      @apply w-full py-2 px-3 text-white font-semibold rounded-lg transition-all transform hover:shadow-lg hover:-translate-y-0.5 disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center space-x-1.5 mt-1;
+      background: linear-gradient(135deg, #e9304f 0%, #ff8f42 50%, #1ab6b0 100%);
+      font-size: 1rem;
+      &:hover {
+        background: linear-gradient(135deg, #d62b48 0%, #f88539 50%, #17a29d 100%);
+      }
+
+      ion-spinner {
+        @apply w-5 h-5;
+      }
+    }
+
+    .back-button-outline {
+      @apply w-full py-2 px-3 font-semibold rounded-lg transition-all transform disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center space-x-1.5 border border-white text-white bg-transparent mt-0.5;
+      font-size: 1rem;
+      &:hover {
+        background: rgba(255, 255, 255, 0.1);
+      }
+    }
+  }
+}
